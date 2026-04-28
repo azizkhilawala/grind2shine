@@ -590,6 +590,26 @@
 
   strong { color: var(--text); }
 
+  /* ─── VIDEO LINK ─── */
+  .yt-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    background: #ff0000;
+    border-radius: 4px;
+    margin-left: 8px;
+    text-decoration: none;
+    vertical-align: middle;
+    flex-shrink: 0;
+    transition: transform 0.15s, opacity 0.15s;
+    position: relative;
+    top: -1px;
+  }
+  .yt-link:hover { transform: scale(1.15); opacity: 0.9; }
+  .yt-link svg { width: 12px; height: 12px; fill: #fff; }
+
   @media print {
     .nav { display: none; }
     .section { display: block !important; }
@@ -820,27 +840,55 @@
           </thead>
           <tbody>
             <tr>
-              <td class="ex-cell"><strong>Low Incline DB Press</strong><br><span style="font-size:12px; color:var(--muted)">Bench at 15–30°</span></td>
+              <td class="ex-cell">
+                <strong>Low Incline DB Press</strong>
+                <a class="yt-link" href="https://www.youtube.com/watch?v=1OTs6FESnXQ" target="_blank" title="Watch: Low Incline DB Press">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+                </a>
+                <br><span style="font-size:12px; color:var(--muted)">Bench at 15–30°</span>
+              </td>
               <td>3→4*</td><td>8–10</td><td>2–3 min</td>
               <td><span class="badge badge-az">Aziz</span> Focus on upper chest squeeze. Elbows 45° from torso.<br><span class="badge badge-ya">Yakuta</span> Same form, lighter weight, full range of motion.</td>
             </tr>
             <tr>
-              <td class="ex-cell"><strong>DB Chest Supported Row</strong><br><span style="font-size:12px; color:var(--muted)">Bench at 30°, chest down</span></td>
+              <td class="ex-cell">
+                <strong>DB Chest Supported Row</strong>
+                <a class="yt-link" href="https://www.youtube.com/shorts/tahGpBijHkY" target="_blank" title="Watch: DB Chest Supported Row">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+                </a>
+                <br><span style="font-size:12px; color:var(--muted)">Bench at 30°, chest down</span>
+              </td>
               <td>3→4*</td><td>10–12</td><td>2 min</td>
               <td><span class="badge badge-both">Both</span> Pull with elbows, squeeze shoulder blades. Key for posture.</td>
             </tr>
             <tr>
-              <td class="ex-cell"><strong>DB Lateral Raises</strong></td>
+              <td class="ex-cell">
+                <strong>DB Lateral Raises</strong>
+                <a class="yt-link" href="https://www.youtube.com/shorts/HeovYNoZDRg" target="_blank" title="Watch: DB Lateral Raises">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+                </a>
+              </td>
               <td>3</td><td>15–20</td><td>1.5 min</td>
               <td><span class="badge badge-az">Aziz</span> Lean slightly forward, raise in scapular plane, no momentum.<br><span class="badge badge-ya">Yakuta</span> Lighter weight, controlled tempo.</td>
             </tr>
             <tr>
-              <td class="ex-cell"><strong>Seated DB Shoulder Press</strong></td>
+              <td class="ex-cell">
+                <strong>Seated DB Shoulder Press</strong>
+                <a class="yt-link" href="https://www.youtube.com/shorts/2D0TyoHv_EY" target="_blank" title="Watch: Seated DB Shoulder Press">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+                </a>
+              </td>
               <td>3→4*</td><td>10–12</td><td>2 min</td>
               <td><span class="badge badge-both">Both</span> Keep core braced, don't arch lower back excessively.</td>
             </tr>
             <tr>
-              <td class="ex-cell"><strong>Push-Ups</strong><br><span style="font-size:12px; color:var(--muted)">Close-grip for chest emphasis</span></td>
+              <td class="ex-cell">
+                <strong>Push-Ups</strong>
+                <a class="yt-link" href="https://www.youtube.com/shorts/wD1M-f69Yy8" target="_blank" title="Watch: Perfect Push-Up Form">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+                </a>
+                <br><span style="font-size:12px; color:var(--muted)">Close-grip for chest emphasis</span>
+              </td>
               <td>3</td><td>10+ (last set to failure)</td><td>1.5 min</td>
               <td><span class="badge badge-az">Aziz</span> Full push-ups, controlled tempo down.<br><span class="badge badge-ya">Yakuta</span> Incline push-ups on bench if needed for back comfort.</td>
             </tr>
