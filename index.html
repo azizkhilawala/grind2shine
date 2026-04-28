@@ -1,0 +1,1587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aziz & Yakuta | 12-Week Transformation Plan</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0b;
+    --surface: #111113;
+    --card: #161618;
+    --border: #222226;
+    --accent: #f4521a;
+    --accent2: #ffb347;
+    --text: #e8e8ea;
+    --muted: #888;
+    --green: #3ecf8e;
+    --blue: #4a9eff;
+    --pink: #ff6b9d;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: linear-gradient(135deg, #0a0a0b 0%, #1a0a04 50%, #0d0509 100%);
+    padding: 80px 40px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(244,82,26,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(244,82,26,0.15);
+    border: 1px solid rgba(244,82,26,0.3);
+    color: var(--accent);
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 2px;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 8vw, 96px);
+    letter-spacing: 3px;
+    line-height: 0.95;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  .hero h1 span { color: var(--accent); }
+
+  .hero-sub {
+    font-size: 17px;
+    color: var(--muted);
+    margin-top: 16px;
+    font-weight: 300;
+    letter-spacing: 0.3px;
+  }
+
+  .hero-tags {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 32px;
+  }
+
+  .tag {
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 2px;
+    font-family: 'DM Mono', monospace;
+  }
+
+  /* ─── NAV ─── */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,10,11,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 20px;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .nav::-webkit-scrollbar { display: none; }
+
+  .nav-btn {
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 16px 18px;
+    cursor: pointer;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+    letter-spacing: 0.3px;
+  }
+
+  .nav-btn:hover { color: var(--text); }
+  .nav-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+  /* ─── LAYOUT ─── */
+  .container { max-width: 960px; margin: 0 auto; padding: 60px 24px; }
+
+  .section { display: none; }
+  .section.active { display: block; }
+
+  /* ─── SECTION HEADER ─── */
+  .section-header { margin-bottom: 40px; }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    letter-spacing: 2px;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .section-desc {
+    color: var(--muted);
+    margin-top: 12px;
+    font-size: 15px;
+    max-width: 640px;
+    font-weight: 300;
+  }
+
+  /* ─── CARDS ─── */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 28px;
+    margin-bottom: 20px;
+  }
+
+  .card-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 1.5px;
+    color: #fff;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .card-title .dot {
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ─── PROFILE GRID ─── */
+  .profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 600px) { .profile-grid { grid-template-columns: 1fr; } }
+
+  .profile-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .profile-header {
+    padding: 20px 24px 14px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .profile-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  .profile-avatar.az { background: rgba(244,82,26,0.15); border: 1px solid rgba(244,82,26,0.3); }
+  .profile-avatar.ya { background: rgba(255,107,157,0.15); border: 1px solid rgba(255,107,157,0.3); }
+
+  .profile-name { font-weight: 700; font-size: 16px; color: #fff; }
+  .profile-role { font-size: 12px; color: var(--muted); margin-top: 1px; }
+
+  .profile-body { padding: 18px 24px; }
+
+  .stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    font-size: 13.5px;
+  }
+
+  .stat-row:last-child { border-bottom: none; }
+  .stat-label { color: var(--muted); }
+  .stat-value { font-weight: 600; color: var(--text); font-family: 'DM Mono', monospace; font-size: 13px; }
+
+  /* ─── MACRO CARDS ─── */
+  .macro-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 20px 0;
+  }
+
+  @media (max-width: 600px) { .macro-grid { grid-template-columns: repeat(2, 1fr); } }
+
+  .macro-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .macro-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    letter-spacing: 1px;
+    line-height: 1;
+  }
+
+  .macro-unit { font-size: 12px; color: var(--muted); margin-top: 4px; }
+  .macro-label { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; margin-top: 6px; color: var(--muted); font-family: 'DM Mono', monospace; }
+
+  .macro-card.cal .macro-num { color: var(--accent); }
+  .macro-card.protein .macro-num { color: var(--green); }
+  .macro-card.carb .macro-num { color: var(--blue); }
+  .macro-card.fat .macro-num { color: var(--accent2); }
+
+  /* ─── TABLES ─── */
+  .table-wrap { overflow-x: auto; margin: 20px 0; border-radius: 4px; border: 1px solid var(--border); }
+
+  table { width: 100%; border-collapse: collapse; }
+
+  th {
+    background: var(--surface);
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+  }
+
+  td {
+    padding: 11px 16px;
+    font-size: 13.5px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(255,255,255,0.015); }
+
+  td.day-cell { font-weight: 700; color: var(--accent); font-family: 'DM Mono', monospace; font-size: 12px; white-space: nowrap; }
+  td.focus-cell { color: var(--accent2); font-weight: 600; font-size: 13px; }
+  td.rest-cell { color: var(--green); font-style: italic; }
+  td.ex-cell { font-size: 13px; }
+
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 2px;
+    font-size: 10px;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .badge-az { background: rgba(244,82,26,0.15); color: var(--accent); border: 1px solid rgba(244,82,26,0.2); }
+  .badge-ya { background: rgba(255,107,157,0.15); color: var(--pink); border: 1px solid rgba(255,107,157,0.2); }
+  .badge-both { background: rgba(255,255,255,0.07); color: var(--muted); border: 1px solid var(--border); }
+
+  /* ─── MONTH PHASES ─── */
+  .phase-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  @media (max-width: 700px) { .phase-grid { grid-template-columns: 1fr; } }
+
+  .phase-card {
+    border-radius: 4px;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .phase-card::before {
+    content: attr(data-num);
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 90px;
+    opacity: 0.06;
+    line-height: 1;
+    color: #fff;
+  }
+
+  .phase-1 { background: linear-gradient(135deg, #1a1204, #0f0a02); border: 1px solid #2a1f06; }
+  .phase-2 { background: linear-gradient(135deg, #120a1a, #080410); border: 1px solid #1e1026; }
+  .phase-3 { background: linear-gradient(135deg, #041210, #020c08); border: 1px solid #061a16; }
+
+  .phase-month {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+
+  .phase-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+  }
+
+  .phase-1 .phase-name { color: var(--accent2); }
+  .phase-2 .phase-name { color: #a78bfa; }
+  .phase-3 .phase-name { color: var(--green); }
+
+  .phase-list { list-style: none; font-size: 13px; color: var(--muted); }
+  .phase-list li { padding: 4px 0; padding-left: 16px; position: relative; }
+  .phase-list li::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
+
+  /* ─── WORKOUT DETAIL ─── */
+  .workout-block {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+
+  .workout-header {
+    padding: 16px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    background: var(--card);
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s;
+    user-select: none;
+  }
+
+  .workout-header:hover { background: rgba(244,82,26,0.04); }
+  .workout-header.open { border-bottom-color: var(--border); }
+
+  .workout-header-left { display: flex; align-items: center; gap: 14px; }
+  .workout-day-badge { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); background: rgba(244,82,26,0.1); border: 1px solid rgba(244,82,26,0.2); padding: 4px 10px; border-radius: 2px; }
+  .workout-title { font-weight: 700; font-size: 15px; color: #fff; }
+  .workout-meta { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .workout-chevron { color: var(--muted); font-size: 18px; transition: transform 0.25s; }
+  .workout-chevron.open { transform: rotate(180deg); }
+
+  .workout-body { display: none; padding: 0; }
+  .workout-body.open { display: block; }
+
+  /* ─── MEAL FRAMEWORK ─── */
+  .meal-day {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    margin-bottom: 16px;
+    overflow: hidden;
+  }
+
+  .meal-day-header {
+    background: var(--surface);
+    padding: 14px 22px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    color: #fff;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .meal-row { padding: 12px 22px; border-bottom: 1px solid rgba(255,255,255,0.04); display: flex; gap: 16px; align-items: flex-start; }
+  .meal-row:last-child { border-bottom: none; }
+  .meal-time { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); min-width: 80px; padding-top: 2px; }
+  .meal-content { flex: 1; font-size: 13.5px; }
+  .meal-label { font-weight: 600; color: var(--text); margin-bottom: 2px; }
+  .meal-detail { color: var(--muted); font-size: 12.5px; }
+
+  /* ─── GROCERY ─── */
+  .grocery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  @media (max-width: 600px) { .grocery-grid { grid-template-columns: 1fr; } }
+
+  .grocery-section { margin-bottom: 6px; }
+  .grocery-cat { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+  .grocery-item { display: flex; align-items: center; gap: 10px; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.04); font-size: 13.5px; }
+  .grocery-item:last-child { border-bottom: none; }
+  .grocery-check { width: 16px; height: 16px; border: 1.5px solid var(--border); border-radius: 2px; flex-shrink: 0; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s; }
+  .grocery-check.checked { background: var(--green); border-color: var(--green); }
+  .grocery-check.checked::after { content: '✓'; font-size: 10px; color: #000; font-weight: 700; }
+
+  /* ─── CHECKLIST ─── */
+  .check-section { margin-bottom: 32px; }
+  .check-title { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 1.5px; color: #fff; margin-bottom: 14px; }
+  .check-item { display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.04); cursor: pointer; }
+  .check-item:last-child { border-bottom: none; }
+  .check-box { width: 20px; height: 20px; border: 1.5px solid var(--border); border-radius: 2px; flex-shrink: 0; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s; margin-top: 1px; }
+  .check-box.checked { background: var(--accent); border-color: var(--accent); }
+  .check-box.checked::after { content: '✓'; font-size: 12px; color: #fff; font-weight: 700; }
+  .check-text { flex: 1; font-size: 14px; }
+  .check-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+  /* ─── RULES ─── */
+  .rules-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  @media (max-width: 600px) { .rules-grid { grid-template-columns: 1fr; } }
+
+  .rule-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 20px;
+  }
+
+  .rule-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    color: rgba(244,82,26,0.2);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .rule-title { font-weight: 700; font-size: 15px; color: #fff; margin-bottom: 6px; }
+  .rule-text { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+  /* ─── PROGRESS TRACKER ─── */
+  .progress-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+
+  @media (max-width: 600px) { .progress-grid { grid-template-columns: 1fr 1fr; } }
+
+  .progress-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .progress-icon { font-size: 28px; margin-bottom: 8px; }
+  .progress-label { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .progress-freq { font-size: 11px; color: var(--muted); font-family: 'DM Mono', monospace; letter-spacing: 0.5px; }
+
+  /* ─── ALERT ─── */
+  .alert {
+    background: rgba(244,82,26,0.06);
+    border: 1px solid rgba(244,82,26,0.2);
+    border-radius: 4px;
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-size: 13.5px;
+    color: var(--text);
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .alert-icon { font-size: 18px; flex-shrink: 0; margin-top: -1px; }
+
+  .alert.green { background: rgba(62,207,142,0.06); border-color: rgba(62,207,142,0.2); }
+  .alert.blue { background: rgba(74,158,255,0.06); border-color: rgba(74,158,255,0.2); }
+
+  /* ─── DIVIDER ─── */
+  .divider { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    border-top: 1px solid var(--border);
+    padding: 40px 24px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  .footer strong { color: var(--accent); font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 1.5px; }
+
+  /* ─── UTILITY ─── */
+  ul.plain { list-style: none; }
+  ul.plain li { padding: 5px 0; padding-left: 18px; position: relative; font-size: 13.5px; color: var(--muted); }
+  ul.plain li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 12px; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 600px) { .two-col { grid-template-columns: 1fr; } }
+
+  .highlight { color: var(--accent); font-weight: 600; }
+  .highlight-g { color: var(--green); font-weight: 600; }
+  .highlight-b { color: var(--blue); font-weight: 600; }
+  .highlight-p { color: var(--pink); font-weight: 600; }
+
+  p { margin-bottom: 12px; color: var(--muted); font-size: 14px; line-height: 1.7; }
+  p:last-child { margin-bottom: 0; }
+
+  h3 { font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 1px; color: #fff; margin: 24px 0 10px; }
+  h4 { font-size: 14px; font-weight: 700; color: var(--text); margin: 16px 0 8px; }
+
+  strong { color: var(--text); }
+
+  @media print {
+    .nav { display: none; }
+    .section { display: block !important; }
+    .workout-body { display: block !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════ HERO ═══════════════════════════════════ -->
+<div class="hero">
+  <div class="hero-badge">Elite Performance → Home Gym Edition</div>
+  <h1>GRIND<span>2</span>SHINE<br>FAMILY EDITION</h1>
+  <p class="hero-sub">Aziz & Yakuta's 12-Week Home Transformation Plan · April 2026</p>
+  <div class="hero-tags">
+    <span class="tag">4 Days / Week</span>
+    <span class="tag">Dumbbells + Bench</span>
+    <span class="tag">Halal Diet</span>
+    <span class="tag">Fat Loss + Muscle Gain</span>
+    <span class="tag">Couple Training</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ NAV ════════════════════════════════════ -->
+<nav class="nav">
+  <button class="nav-btn active" onclick="showSection('overview')">Overview</button>
+  <button class="nav-btn" onclick="showSection('training')">Training Plan</button>
+  <button class="nav-btn" onclick="showSection('nutrition')">Nutrition</button>
+  <button class="nav-btn" onclick="showSection('meals')">Meal Framework</button>
+  <button class="nav-btn" onclick="showSection('grocery')">Grocery List</button>
+  <button class="nav-btn" onclick="showSection('tracking')">Tracking</button>
+  <button class="nav-btn" onclick="showSection('rules')">Rules for Success</button>
+</nav>
+
+<!-- ═══════════════════════════════════ SECTION: OVERVIEW ═════════════════════ -->
+<div class="container">
+<div id="section-overview" class="section active">
+
+  <div class="section-header">
+    <div class="section-label">01 / Overview</div>
+    <div class="section-title">THE STRATEGY</div>
+    <div class="section-desc">Built from your EPG experience, OrangeTheory base, and halal diet. Designed to run together at home.</div>
+  </div>
+
+  <!-- PROFILES -->
+  <div class="profile-grid">
+    <div class="profile-card">
+      <div class="profile-header">
+        <div class="profile-avatar az">🔥</div>
+        <div>
+          <div class="profile-name">Aziz</div>
+          <div class="profile-role">Digital Product Designer</div>
+        </div>
+      </div>
+      <div class="profile-body">
+        <div class="stat-row"><span class="stat-label">Weight</span><span class="stat-value">87 kg / 192 lbs</span></div>
+        <div class="stat-row"><span class="stat-label">Current Body Fat</span><span class="stat-value">~28%</span></div>
+        <div class="stat-row"><span class="stat-label">Training History</span><span class="stat-value">OT (2yr) + EPG (2yr)</span></div>
+        <div class="stat-row"><span class="stat-label">Last EPG Session</span><span class="stat-value">Feb 17, 2026</span></div>
+        <div class="stat-row"><span class="stat-label">Primary Goal</span><span class="stat-value">Fat loss + upper body recomp</span></div>
+        <div class="stat-row"><span class="stat-label">Focus Area</span><span class="stat-value">Chest, posture, gynecomastia</span></div>
+      </div>
+    </div>
+
+    <div class="profile-card">
+      <div class="profile-header">
+        <div class="profile-avatar ya">💜</div>
+        <div>
+          <div class="profile-name">Yakuta</div>
+          <div class="profile-role">Psychologist</div>
+        </div>
+      </div>
+      <div class="profile-body">
+        <div class="stat-row"><span class="stat-label">Weight</span><span class="stat-value">74 kg / 163 lbs</span></div>
+        <div class="stat-row"><span class="stat-label">Training History</span><span class="stat-value">OrangeTheory (2yr)</span></div>
+        <div class="stat-row"><span class="stat-label">Primary Goal</span><span class="stat-value">Fat loss + toning</span></div>
+        <div class="stat-row"><span class="stat-label">Focus Area</span><span class="stat-value">Arms, thighs</span></div>
+        <div class="stat-row"><span class="stat-label">Consideration</span><span class="stat-value">Chronic back + leg pain</span></div>
+        <div class="stat-row"><span class="stat-label">Craving Challenge</span><span class="stat-value">Sugar / sweet tooth</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STRATEGY -->
+  <div class="card">
+    <div class="card-title"><span class="dot"></span>The Big Picture</div>
+    <p>You're both coming in with real training history. Aziz, your EPG Elite Bootcamp sessions (right up to February 17th) built you a solid cardio and strength base. This plan takes that engine and channels it into something more targeted: structured progressive overload with dumbbells, precise nutrition using the EPG macro framework you already know, and a schedule that works as a couple at home.</p>
+    <p>The approach is simple: <strong>eat in a calorie deficit, hit protein every single day, and train progressively harder each week.</strong> Fat loss happens in the kitchen; muscle preservation and building happens in the gym. You can absolutely do both at the same time, especially given where you're both starting from.</p>
+    <p>For <span class="highlight">Aziz</span>: the gynecomastia concern is real, and while training can't eliminate the tissue itself, building a strong upper chest and back dramatically changes how your chest looks and how shirts fit. This plan prioritizes posture work, upper chest emphasis, and back thickness. The fat loss component will also help significantly as overall body fat drops.</p>
+    <p>For <span class="highlight-p">Yakuta</span>: chronic back and leg pain means we train around it, not through it. Every lower body exercise has a back-friendly modification built in. The arm and thigh concern is addressed directly through the upper-lower split, and with consistent protein and calorie management, toning follows naturally.</p>
+  </div>
+
+  <!-- PHASE OVERVIEW -->
+  <h3>12-WEEK PHASE BREAKDOWN</h3>
+  <div class="phase-grid">
+    <div class="phase-card phase-1" data-num="1">
+      <div class="phase-month">Month 1 · Weeks 1–4</div>
+      <div class="phase-name">FOUNDATION</div>
+      <ul class="phase-list">
+        <li>Build form and habit</li>
+        <li>Establish macro tracking</li>
+        <li>3 sets, 10–12 reps</li>
+        <li>Higher carbs (1.5 cups/meal)</li>
+        <li>4 sessions/week</li>
+        <li>Daily 3–4L water</li>
+      </ul>
+    </div>
+    <div class="phase-card phase-2" data-num="2">
+      <div class="phase-month">Month 2 · Weeks 5–8</div>
+      <div class="phase-name">INTENSIFY</div>
+      <ul class="phase-list">
+        <li>Add sets and load</li>
+        <li>Progressive overload</li>
+        <li>3–4 sets, 8–10 reps</li>
+        <li>Reduce carbs (1 cup/meal)</li>
+        <li>Add Saturday walks</li>
+        <li>Weekly progress photos</li>
+      </ul>
+    </div>
+    <div class="phase-card phase-3" data-num="3">
+      <div class="phase-month">Month 3 · Weeks 9–12</div>
+      <div class="phase-name">PEAK BURN</div>
+      <ul class="phase-list">
+        <li>Heaviest weights</li>
+        <li>4 sets, 6–10 reps</li>
+        <li>Lowest carbs (½ cup/meal)</li>
+        <li>Add 20-min finishers</li>
+        <li>Final progress assessment</li>
+        <li>Plan next 12 weeks</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- WHAT TO EXPECT -->
+  <div class="card">
+    <div class="card-title"><span class="dot"></span>Realistic Expected Results</div>
+    <div class="two-col">
+      <div>
+        <h4 style="color:var(--accent)">Aziz</h4>
+        <ul class="plain">
+          <li>Drop 4–8 kg of fat over 12 weeks</li>
+          <li>Body fat from ~28% toward 22–24%</li>
+          <li>Noticeable chest definition by Week 8</li>
+          <li>Shirts fitting noticeably better by Week 6</li>
+          <li>Stronger, fuller upper back and shoulders</li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color:var(--pink)">Yakuta</h4>
+        <ul class="plain">
+          <li>Drop 3–6 kg of fat over 12 weeks</li>
+          <li>Visible arm toning by Week 6–8</li>
+          <li>Thigh slimming from consistent lower body work</li>
+          <li>Less back pain through stronger core and glutes</li>
+          <li>Better energy and sleep quality</li>
+        </ul>
+      </div>
+    </div>
+    <div class="alert blue" style="margin-top: 20px;">
+      <span class="alert-icon">ℹ️</span>
+      <span>Weight on the scale matters less than measurements, photos, and how clothes fit. Take weekly weight averages (not daily spikes). Losing ~1% of body weight per week is excellent progress, per the EPG protocol you already know.</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════ SECTION: TRAINING ══════════════════════ -->
+<div id="section-training" class="section">
+
+  <div class="section-header">
+    <div class="section-label">02 / Training</div>
+    <div class="section-title">12-WEEK WORKOUT PLAN</div>
+    <div class="section-desc">4-day Upper-Lower split. All you need is your dumbbells and bench. Based on the BWS framework from your project files, adapted for your specific goals.</div>
+  </div>
+
+  <!-- WEEKLY SCHEDULE -->
+  <h3>WEEKLY SCHEDULE (ALL 12 WEEKS)</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Day</th>
+          <th>Session</th>
+          <th>Duration</th>
+          <th>Focus</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="day-cell">MON</td><td>Upper Body A</td><td>45–55 min</td><td class="focus-cell">Chest + Back + Shoulders</td></tr>
+        <tr><td class="day-cell">TUE</td><td>Lower Body A</td><td>45–55 min</td><td class="focus-cell">Quads + Hamstrings + Core</td></tr>
+        <tr><td class="day-cell">WED</td><td>Active Recovery</td><td>20–30 min</td><td class="rest-cell">Walk, Stretch, or Mobility</td></tr>
+        <tr><td class="day-cell">THU</td><td>Upper Body B</td><td>45–55 min</td><td class="focus-cell">Pull + Shoulders + Arms</td></tr>
+        <tr><td class="day-cell">FRI</td><td>Lower Body B</td><td>45–55 min</td><td class="focus-cell">Glutes + Hamstrings + Core</td></tr>
+        <tr><td class="day-cell">SAT</td><td>Walk / Cricket Practice</td><td>30–60 min</td><td class="rest-cell">Active recovery, steps goal</td></tr>
+        <tr><td class="day-cell">SUN</td><td>Full Rest</td><td>—</td><td class="rest-cell">Recovery, meal prep day</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="alert green">
+    <span class="alert-icon">💡</span>
+    <span>Write each workout on your whiteboard before you start. It takes 2 minutes and makes the session feel structured. Aziz: note your weights each session so you know when to go heavier next time.</span>
+  </div>
+
+  <!-- WORKOUTS -->
+  <h3>WORKOUT DETAILS</h3>
+
+  <!-- UPPER A -->
+  <div class="workout-block">
+    <div class="workout-header open" onclick="toggleWorkout(this)">
+      <div class="workout-header-left">
+        <span class="workout-day-badge">MON / THU ALT</span>
+        <div>
+          <div class="workout-title">Upper Body A — Push + Pull</div>
+          <div class="workout-meta">5 exercises · 45 min · Warm-up included</div>
+        </div>
+      </div>
+      <span class="workout-chevron open">▾</span>
+    </div>
+    <div class="workout-body open">
+      <div style="padding: 16px 22px 6px; font-size: 13px; color: var(--muted);">
+        <strong style="color:var(--accent2)">Warm-Up (5–8 min):</strong> Arm circles x 15 each direction · Shoulder rolls · Cat-cow x 10 · Band pull-aparts x 15 (or hands clasped behind back) · Bodyweight squats x 10
+      </div>
+      <div class="table-wrap" style="border:none; border-radius:0; border-top: 1px solid var(--border);">
+        <table>
+          <thead>
+            <tr><th>Exercise</th><th>Sets</th><th>Reps</th><th>Rest</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="ex-cell"><strong>Low Incline DB Press</strong><br><span style="font-size:12px; color:var(--muted)">Bench at 15–30°</span></td>
+              <td>3→4*</td><td>8–10</td><td>2–3 min</td>
+              <td><span class="badge badge-az">Aziz</span> Focus on upper chest squeeze. Elbows 45° from torso.<br><span class="badge badge-ya">Yakuta</span> Same form, lighter weight, full range of motion.</td>
+            </tr>
+            <tr>
+              <td class="ex-cell"><strong>DB Chest Supported Row</strong><br><span style="font-size:12px; color:var(--muted)">Bench at 30°, chest down</span></td>
+              <td>3→4*</td><td>10–12</td><td>2 min</td>
+              <td><span class="badge badge-both">Both</span> Pull with elbows, squeeze shoulder blades. Key for posture.</td>
+            </tr>
+            <tr>
+              <td class="ex-cell"><strong>DB Lateral Raises</strong></td>
+              <td>3</td><td>15–20</td><td>1.5 min</td>
+              <td><span class="badge badge-az">Aziz</span> Lean slightly forward, raise in scapular plane, no momentum.<br><span class="badge badge-ya">Yakuta</span> Lighter weight, controlled tempo.</td>
+            </tr>
+            <tr>
+              <td class="ex-cell"><strong>Seated DB Shoulder Press</strong></td>
+              <td>3→4*</td><td>10–12</td><td>2 min</td>
+              <td><span class="badge badge-both">Both</span> Keep core braced, don't arch lower back excessively.</td>
+            </tr>
+            <tr>
+              <td class="ex-cell"><strong>Push-Ups</strong><br><span style="font-size:12px; color:var(--muted)">Close-grip for chest emphasis</span></td>
+              <td>3</td><td>10+ (last set to failure)</td><td>1.5 min</td>
+              <td><span class="badge badge-az">Aziz</span> Full push-ups, controlled tempo down.<br><span class="badge badge-ya">Yakuta</span> Incline push-ups on bench if needed for back comfort.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="padding: 12px 22px 16px; font-size: 12.5px; color: var(--muted);">*Sets increase: 3 sets in Month 1 → 4 sets in Months 2 and 3</div>
+    </div>
+  </div>
+
+  <!-- LOWER A -->
+  <div class="workout-block">
+    <div class="workout-header" onclick="toggleWorkout(this)">
+      <div class="workout-header-left">
+        <span class="workout-day-badge" style="color:#4a9eff; background:rgba(74,158,255,0.1); border-color:rgba(74,158,255,0.2)">TUE</span>
+        <div>
+          <div class="workout-title">Lower Body A — Quad + Core Focus</div>
+          <div class="workout-meta">5 exercises · 45 min · Back-friendly options included</div>
+        </div>
+      </div>
+      <span class="workout-chevron">▾</span>
+    </div>
+    <div class="workout-body">
+      <div style="padding: 16px 22px 6px; font-size: 13px; color: var(--muted);">
+        <strong style="color:var(--accent2)">Warm-Up (5–8 min):</strong> Hip circles x 10 each · Glute bridges x 15 · Leg swings x 10/leg · Bodyweight squat x 10 · Cat-cow x 10
+      </div>
+      <div class="table-wrap" style="border:none; border-radius:0; border-top: 1px solid var(--border);">
+        <table>
+          <thead>
+            <tr><th>Exercise</th><th>Sets</th><th>Reps</th><th>Rest</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="ex-cell"><strong>DB Goblet Squat</strong><br><span style="font-size:12px; color:var(--muted)">Hold one DB at chest</span></td>
+              <td>3→4*</td><td>10–12</td><td>2 min</td>
+              <td><span class="badge badge-az">Aziz</span> Go deep, keep chest tall, push knees out.<br><span class="badge badge-ya">Yakuta</span> Shallow squat depth if back/knee pain. Priority: tension not depth.</td>
+            </tr>
+            <tr>
+              <td class="ex-cell"><strong>DB Romanian Deadlift</strong></td>
+              <td>3→4*</td><td>10–12</td><td>2 min</td>
+              <td><span class="badge badge-az">Aziz</span> Standard form per BWS guide. Hinge from hips.<br><span class="badge badge-ya">Yakuta</span> Limit range to knee level only. No rounding of lower back. Light weight.</td>
+            </tr>
+            <tr>
+              <td class="ex-cell"><strong>Reverse Lunges</strong><br><span style="font-size:12px; color:var(--muted)">Dumbbells in hands</span></td>
+              <td>3</td><td>10/leg</td><td>1.5 min</td>
+              <td><span class="badge badge-ya">Yakuta</span> Reverse lunges are knee-friendly. Hold bench for balance if needed.<br><span class="badge badge-az">Aziz</span> Add weight as comfortable.</td>
+            </tr>
+            <tr>
+              <td class="ex-cell"><strong>Standing DB Calf Raises</strong></td>
+              <td>3</td><td>15–20</td><td>1 min</td>
+              <td><span class="badge badge-both">Both</span> Single leg for more challenge. Hold bench for balance.</td>
+            </tr>
+            <tr>
+              <td class="ex-cell"><strong>Dead Bug</strong><br><span style="font-size:12px; color:var(--muted)">Core stability</span></td>
+              <td>3</td><td>8/side</td><td>1 min</td>
+              <td><span class="badge badge-ya">Yakuta</span> Excellent for back health. Press lower back flat to floor, breathe out on extend.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="padding: 12px 22px 16px; font-size: 12.5px; color: var(--muted);">*Sets increase Month 2 onwards</div>
+    </div>
+  </div>
+
+  <!-- UPPER B -->
+  <div class="workout-block">
+    <div class="workout-header" onclick="toggleWorkout(this)">
+      <div class="workout-header-left">
+        <span class="workout-day-badge">THU</span>
+        <div>
+          <div class="workout-title">Upper Body B — Pull + Arms + Posture</div>
+          <div class="workout-meta">6 exercises · 50 min · Back thickness + posture emphasis</div>
+        </div>
+      </div>
+      <span class="workout-chevron">▾</span>
+    </div>
+    <div class="workout-body">
+      <div style="padding: 16px 22px 6px; font-size: 13px; color: var(--muted);">
+        <strong style="color:var(--accent2)">Warm-Up (5–8 min):</strong> Arm circles · Shoulder rolls · Prone Y-T-W (lie on floor) x 10 each · Cat-cow · Thoracic rotation x 8/side
+      </div>
+      <div class="table-wrap" style="border:none; border-radius:0; border-top: 1px solid var(--border);">
+        <table>
+          <thead>
+            <tr><th>Exercise</th><th>Sets</th><th>Reps</th><th>Rest</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="ex-cell"><strong>Flat DB Press</strong></td>
+              <td>3→4*</td><td>8–10</td><td>2–3 min</td>
+              <td><span class="badge badge-both">Both</span> Alternative to barbell bench press. Neutral grip option for shoulder comfort.</td>
+            </tr>
+            <tr>
+              <td class="ex-cell"><strong>Bent Over DB Row</strong><br><span style="font-size:12px; color:var(--muted)">Mid/upper back</span></td>
+              <td>3→4*</td><td>10–12</td><td>2 min</td>
+              <td><span class="badge badge-az">Aziz</span> Hinge to 45°, row to hip, squeeze back hard.<br><span class="badge badge-ya">Yakuta</span> Use chest-supported version (on bench) to protect back.</td>
+            </tr>
+            <tr>
+              <td class="ex-cell"><strong>DB Lateral Raises</strong></td>
+              <td>3</td><td>15–20</td><td>1.5 min</td>
+              <td><span class="badge badge-both">Both</span> Shoulder width development. Don't go heavier than controlled.</td>
+            </tr>
+            <tr>
+              <td class="ex-cell"><strong>Bent Over DB Face Pulls</strong><br><span style="font-size:12px; color:var(--muted)">Rear delts + posture</span></td>
+              <td>3</td><td>15–20</td><td>1.5 min</td>
+              <td><span class="badge badge-az">Aziz</span> Critical for posture and chest appearance. Hinge 45°, pull toward face.<br><span class="badge badge-ya">Yakuta</span> Same, lighter weight, focus on squeeze.</td>
+            </tr>
+            <tr>
+              <td class="ex-cell"><strong>Incline DB Curls</strong><br><span style="font-size:12px; color:var(--muted)">Bench at 45–60°</span></td>
+              <td>3</td><td>12–15</td><td>1.5 min</td>
+              <td><span class="badge badge-ya">Yakuta</span> Great for arm toning. Full stretch at bottom, controlled curl up.</td>
+            </tr>
+            <tr>
+              <td class="ex-cell"><strong>DB Tricep Overhead Extension</strong></td>
+              <td>3</td><td>12–15</td><td>1.5 min</td>
+              <td><span class="badge badge-ya">Yakuta</span> Targets the underarm area directly. Keep elbows close to head.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOWER B -->
+  <div class="workout-block">
+    <div class="workout-header" onclick="toggleWorkout(this)">
+      <div class="workout-header-left">
+        <span class="workout-day-badge" style="color:#4a9eff; background:rgba(74,158,255,0.1); border-color:rgba(74,158,255,0.2)">FRI</span>
+        <div>
+          <div class="workout-title">Lower Body B — Glutes + Hamstrings</div>
+          <div class="workout-meta">5 exercises · 45 min · Hip and glute emphasis</div>
+        </div>
+      </div>
+      <span class="workout-chevron">▾</span>
+    </div>
+    <div class="workout-body">
+      <div style="padding: 16px 22px 6px; font-size: 13px; color: var(--muted);">
+        <strong style="color:var(--accent2)">Warm-Up (5–8 min):</strong> Glute bridges x 15 · Hip flexor stretch 30s/side · Clamshells x 15/side · Leg swings · Bodyweight RDL x 10
+      </div>
+      <div class="table-wrap" style="border:none; border-radius:0; border-top: 1px solid var(--border);">
+        <table>
+          <thead>
+            <tr><th>Exercise</th><th>Sets</th><th>Reps</th><th>Rest</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="ex-cell"><strong>Weighted Glute Bridges</strong><br><span style="font-size:12px; color:var(--muted)">DB on hips</span></td>
+              <td>3→4*</td><td>15</td><td>1.5 min</td>
+              <td><span class="badge badge-ya">Yakuta</span> Back-friendly glute activator. Drive through heels, squeeze at top.<br><span class="badge badge-az">Aziz</span> Progress to single-leg as strength builds.</td>
+            </tr>
+            <tr>
+              <td class="ex-cell"><strong>DB Romanian Deadlift</strong></td>
+              <td>3→4*</td><td>10–12</td><td>2 min</td>
+              <td><span class="badge badge-both">Both</span> Second hit on hamstrings this week. Same form cues as Tuesday.</td>
+            </tr>
+            <tr>
+              <td class="ex-cell"><strong>Weighted Step-Ups</strong><br><span style="font-size:12px; color:var(--muted)">Use bench or stable surface</span></td>
+              <td>3</td><td>10/leg</td><td>2 min</td>
+              <td><span class="badge badge-ya">Yakuta</span> Knee-friendly quad and glute work. Hold bench or wall for balance initially.<br><span class="badge badge-az">Aziz</span> Hold heavier DBs.</td>
+            </tr>
+            <tr>
+              <td class="ex-cell"><strong>Seated DB Calf Raises</strong><br><span style="font-size:12px; color:var(--muted)">DB balanced on knees</span></td>
+              <td>3</td><td>15–20</td><td>1 min</td>
+              <td><span class="badge badge-both">Both</span> Seated version hits soleus (inner calf) differently than standing.</td>
+            </tr>
+            <tr>
+              <td class="ex-cell"><strong>Bird Dog</strong><br><span style="font-size:12px; color:var(--muted)">Core + back stabilizer</span></td>
+              <td>3</td><td>10/side</td><td>1 min</td>
+              <td><span class="badge badge-ya">Yakuta</span> One of the best back-safe core exercises. Hold 2 seconds at extension, stay level.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROGRESSIVE OVERLOAD -->
+  <div class="card" style="margin-top: 32px;">
+    <div class="card-title"><span class="dot"></span>Progressive Overload Strategy</div>
+    <div class="table-wrap" style="margin: 0;">
+      <table>
+        <thead>
+          <tr><th>Month</th><th>Weeks</th><th>Sets</th><th>Reps</th><th>Load</th><th>Carbs</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span style="color:var(--accent2); font-weight:700;">Foundation</span></td><td>1–4</td><td>3</td><td>10–12</td><td>Form focus, moderate weight</td><td>1.5 cups/meal</td></tr>
+          <tr><td><span style="color:#a78bfa; font-weight:700;">Intensify</span></td><td>5–8</td><td>3–4</td><td>8–10</td><td>+2–5 lbs every 2 weeks if possible</td><td>1 cup/meal</td></tr>
+          <tr><td><span style="color:var(--green); font-weight:700;">Peak</span></td><td>9–12</td><td>4</td><td>6–10</td><td>Heaviest sustainable load</td><td>½ cup/meal</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="margin-top: 16px; font-size: 13.5px; color: var(--muted);">
+      <strong style="color: var(--text)">When to go heavier:</strong> If you can complete all reps with good form and the last 2 reps feel comfortable, bump the weight next session. If you fail a rep, stay at the same weight until you hit all reps cleanly.
+    </div>
+  </div>
+
+  <!-- MINIMUM DOSE -->
+  <div class="card">
+    <div class="card-title"><span class="dot"></span>Minimum Effective Dose (Busy Days)</div>
+    <p>Life happens. When you only have 25 minutes, don't skip. Do this:</p>
+    <ul class="plain">
+      <li>Upper day: 3 sets of Incline DB Press + 3 sets of Bent Over Row. Done.</li>
+      <li>Lower day: 3 sets of Goblet Squat + 3 sets of Romanian Deadlift. Done.</li>
+      <li>Something always beats nothing. 25 minutes still counts.</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════ SECTION: NUTRITION ═════════════════════ -->
+<div id="section-nutrition" class="section">
+
+  <div class="section-header">
+    <div class="section-label">03 / Nutrition</div>
+    <div class="section-title">YOUR MACROS</div>
+    <div class="section-desc">Calculated using the EPG formula. These are your daily targets for fat loss while preserving muscle.</div>
+  </div>
+
+  <!-- AZIZ MACROS -->
+  <h3>AZIZ — Daily Targets</h3>
+  <div style="font-size: 13px; color: var(--muted); margin-bottom: 12px;">Based on EPG formula: 192 lbs × 14 = 2,688 cal maintenance − 500 = <strong style="color:var(--accent)">2,188 cal deficit</strong></div>
+  <div class="macro-grid">
+    <div class="macro-card cal"><div class="macro-num">2,188</div><div class="macro-unit">calories</div><div class="macro-label">Daily Target</div></div>
+    <div class="macro-card protein"><div class="macro-num">192g</div><div class="macro-unit">protein</div><div class="macro-label">768 cal</div></div>
+    <div class="macro-card carb"><div class="macro-num">225g</div><div class="macro-unit">carbs</div><div class="macro-label">900 cal (M1)</div></div>
+    <div class="macro-card fat"><div class="macro-num">58g</div><div class="macro-unit">fat</div><div class="macro-label">522 cal</div></div>
+  </div>
+
+  <!-- YAKUTA MACROS -->
+  <h3 style="margin-top:32px;">YAKUTA — Daily Targets</h3>
+  <div style="font-size: 13px; color: var(--muted); margin-bottom: 12px;">Based on EPG formula: 163 lbs × 14 = 2,282 cal maintenance − 500 = <strong style="color:var(--pink)">1,782 cal deficit</strong></div>
+  <div class="macro-grid">
+    <div class="macro-card cal" style="--accent: #ff6b9d"><div class="macro-num" style="color:var(--pink)">1,782</div><div class="macro-unit">calories</div><div class="macro-label">Daily Target</div></div>
+    <div class="macro-card protein"><div class="macro-num">163g</div><div class="macro-unit">protein</div><div class="macro-label">652 cal</div></div>
+    <div class="macro-card carb"><div class="macro-num">172g</div><div class="macro-unit">carbs</div><div class="macro-label">688 cal (M1)</div></div>
+    <div class="macro-card fat"><div class="macro-num">49g</div><div class="macro-unit">fat</div><div class="macro-label">441 cal</div></div>
+  </div>
+
+  <div class="alert" style="margin-top: 24px;">
+    <span class="alert-icon">⚠️</span>
+    <span><strong>Keep protein and fat the same every day.</strong> The EPG carb reduction schedule drops carbs every 4 weeks (per the plan in your project files): 1.5 cups → 1 cup → ½ cup per meal. Protein and fat never change.</span>
+  </div>
+
+  <hr class="divider">
+
+  <!-- HALAL DIET STRATEGY -->
+  <h3>WORKING WITH YOUR BOHRI HALAL DIET</h3>
+
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title" style="font-size: 18px;"><span class="dot"></span>Mosque-Catered Meals</div>
+      <p>Mosque food is real, filling, and often protein-rich (meat curries, dal, rice). Here's how to navigate it:</p>
+      <ul class="plain">
+        <li>Prioritize the protein portion (meat). Take double protein, half the rice.</li>
+        <li>Remove skin from chicken if served.</li>
+        <li>Limit gravy/sauce (high oil/fat) to a couple tablespoons.</li>
+        <li>Load up on any vegetable sides.</li>
+        <li>Before attending: have a protein shake so you're not starving and overeating.</li>
+        <li>Eat slowly. It takes 20 min to feel full.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title" style="font-size: 18px;"><span class="dot"></span>Home Cooking Wins</div>
+      <p>Your spice collection is an unfair advantage. Flavor doesn't require calories.</p>
+      <ul class="plain">
+        <li>Chicken breast marinated in yogurt + turmeric + cumin + garam masala = unbeatable.</li>
+        <li>Tilapia, shrimp, surmai and pomfret all count as lean protein.</li>
+        <li>Ground beef (lean) for keema or kebabs.</li>
+        <li>Egg whites (6) + 1 whole egg is a fast high-protein breakfast.</li>
+        <li>Dal (lentils) = underrated protein + fiber combo.</li>
+        <li>Cook proteins in bulk on Sunday. Rotate spice profiles all week.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="two-col" style="margin-top: 0;">
+    <div class="card">
+      <div class="card-title" style="font-size: 18px;"><span class="dot"></span>Aziz — Foodie Strategy 🍽️</div>
+      <p>You love great food. Use that.</p>
+      <ul class="plain">
+        <li>Different marinade every 2 days: teriyaki, garam masala, harissa yogurt, lemon herb.</li>
+        <li>High-protein sauces: Greek yogurt raita instead of heavy cream sauces.</li>
+        <li>If you go out: protein shake before leaving. Order protein + salad/veg. Skip the bread.</li>
+        <li>One intentional higher-calorie meal per week (not a binge, a plan) keeps adherence up.</li>
+        <li>Quest protein chips or Wilde chips for a "junk food" fix that doesn't wreck macros.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title" style="font-size: 18px;"><span class="dot"></span>Yakuta — Sugar Craving Strategy 🍓</div>
+      <p>Sweet cravings are beatable without white-knuckling it.</p>
+      <ul class="plain">
+        <li>Protein pudding: 0% Greek yogurt + protein powder + berries. Tastes like dessert.</li>
+        <li>Fruit (1 piece) as a planned snack satisfies sweet cravings with fiber.</li>
+        <li>Cinnamon in oatmeal hits sweet taste without sugar.</li>
+        <li>Frozen berries blended with protein shake = thick "milkshake" texture.</li>
+        <li>If craving is intense: have the fruit, not the cookie. Get ahead of it with protein at that meal.</li>
+        <li>Identify triggers (stress at work? After dinner?) and have a replacement ready.</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- PRE/POST WORKOUT -->
+  <h3>PRE + POST WORKOUT NUTRITION</h3>
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title" style="font-size: 18px;"><span class="dot"></span>Pre-Workout (30–60 min before)</div>
+      <ul class="plain">
+        <li><strong>Option 1:</strong> 1 scoop protein + 1 banana</li>
+        <li><strong>Option 2:</strong> Oats (½ cup dry) + protein powder mixed in</li>
+        <li><strong>Option 3:</strong> 2 slices whole grain bread + 2 tbsp almond butter</li>
+        <li>Keep it light. You want fuel, not fullness.</li>
+        <li>Hydrate: 500ml water before starting</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title" style="font-size: 18px;"><span class="dot"></span>Post-Workout (within 60 min)</div>
+      <ul class="plain">
+        <li><strong>Option 1:</strong> Protein shake + fruit</li>
+        <li><strong>Option 2:</strong> Egg whites scramble + rice</li>
+        <li><strong>Option 3:</strong> Grilled chicken + sweet potato</li>
+        <li>This is your most important meal for muscle recovery.</li>
+        <li>Don't skip it. Get protein in within the hour.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- HYDRATION -->
+  <div class="card">
+    <div class="card-title"><span class="dot"></span>Hydration — Non-Negotiable</div>
+    <div class="two-col">
+      <div>
+        <ul class="plain">
+          <li>3–4 liters of water every day, per EPG protocol</li>
+          <li>Only zero-calorie drinks (water, black coffee, herbal tea)</li>
+          <li>Sparkling water if you miss carbonation</li>
+        </ul>
+      </div>
+      <div>
+        <ul class="plain">
+          <li>Start every morning with a full glass before anything else</li>
+          <li>Keep a marked water bottle to track intake</li>
+          <li>Dehydration = low energy and poor performance</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════ SECTION: MEALS ═════════════════════════ -->
+<div id="section-meals" class="section">
+
+  <div class="section-header">
+    <div class="section-label">04 / Meals</div>
+    <div class="section-title">7-DAY MEAL FRAMEWORK</div>
+    <div class="section-desc">A rotating week of halal-friendly, high-protein meals. Repeat or mix and match. All portions follow the EPG guide: Protein + Carb + Veggie + Fat per meal.</div>
+  </div>
+
+  <div class="alert green">
+    <span class="alert-icon">📋</span>
+    <span><strong>Structure every meal as:</strong> Protein (6oz cooked / 1 cup egg whites / 1 scoop protein) + Carb (1.5 cups in Month 1) + Veggies (unlimited greens) + Fat (1 tbsp oil/butter or ¼ avocado)</span>
+  </div>
+
+  <!-- DAYS -->
+  <div class="meal-day">
+    <div class="meal-day-header">Monday <span style="font-size:13px; font-family:'DM Sans', sans-serif; color:var(--muted); font-weight:400; letter-spacing:0">&nbsp;· Training Day (Upper A)</span></div>
+    <div class="meal-row"><div class="meal-time">7:00 AM<br>Breakfast</div><div class="meal-content"><div class="meal-label">Egg White Scramble + Oats</div><div class="meal-detail">6 egg whites + 1 whole egg, scrambled with spinach and turmeric · ½ cup dry rolled oats cooked in water · 1 cup berries</div></div></div>
+    <div class="meal-row"><div class="meal-time">10:30 AM<br>Snack</div><div class="meal-content"><div class="meal-label">Protein Shake</div><div class="meal-detail">1 scoop protein powder + water or low-fat milk · 1 piece fruit</div></div></div>
+    <div class="meal-row"><div class="meal-time">1:00 PM<br>Lunch</div><div class="meal-content"><div class="meal-label">Grilled Chicken + Rice</div><div class="meal-detail">6 oz chicken breast (marinated in yogurt + cumin + turmeric + coriander) · 1.5 cups cooked rice · Salad with cucumber, tomato, lemon</div></div></div>
+    <div class="meal-row"><div class="meal-time">Pre-WO<br>~6:30 PM</div><div class="meal-content"><div class="meal-label">Pre-Workout Snack</div><div class="meal-detail">1 banana + small protein shake, or 2 slices bread + almond butter</div></div></div>
+    <div class="meal-row"><div class="meal-time">8:30 PM<br>Dinner</div><div class="meal-content"><div class="meal-label">Lean Ground Beef Keema + Sweet Potato</div><div class="meal-detail">6 oz 93% lean ground beef cooked with onion, tomato, garam masala, peas · 1.5 cups sweet potato · Steamed broccoli or cauliflower</div></div></div>
+  </div>
+
+  <div class="meal-day">
+    <div class="meal-day-header">Tuesday <span style="font-size:13px; font-family:'DM Sans', sans-serif; color:var(--muted); font-weight:400; letter-spacing:0">&nbsp;· Training Day (Lower A)</span></div>
+    <div class="meal-row"><div class="meal-time">7:00 AM<br>Breakfast</div><div class="meal-content"><div class="meal-label">Greek Yogurt Parfait</div><div class="meal-detail">1 cup 0% Greek yogurt · ½ cup oats · 1 cup berries · 1 tbsp almond butter · Sprinkle of cinnamon for sweetness</div></div></div>
+    <div class="meal-row"><div class="meal-time">10:30 AM<br>Snack</div><div class="meal-content"><div class="meal-label">Cottage Cheese + Fruit</div><div class="meal-detail">1 cup 0% cottage cheese · 1 piece fruit · Small handful nuts</div></div></div>
+    <div class="meal-row"><div class="meal-time">1:00 PM<br>Lunch</div><div class="meal-content"><div class="meal-label">Shrimp Stir-Fry (Halal)</div><div class="meal-detail">6 oz shrimp sautéed in soy sauce, ginger, garlic, sesame oil · 1.5 cups brown rice · Mixed vegetables (broccoli, snap peas, capsicum)</div></div></div>
+    <div class="meal-row"><div class="meal-time">Pre-WO</div><div class="meal-content"><div class="meal-label">Oats + Protein</div><div class="meal-detail">½ cup oats cooked · 1 scoop protein stirred in · Banana</div></div></div>
+    <div class="meal-row"><div class="meal-time">8:30 PM<br>Dinner</div><div class="meal-content"><div class="meal-label">Chicken Tikka + Quinoa</div><div class="meal-detail">6 oz chicken breast marinated in tikka spices, grilled or baked · 1.5 cups cooked quinoa · Cucumber raita (Greek yogurt + cucumber + mint)</div></div></div>
+  </div>
+
+  <div class="meal-day">
+    <div class="meal-day-header">Wednesday <span style="font-size:13px; font-family:'DM Sans', sans-serif; color:var(--muted); font-weight:400; letter-spacing:0">&nbsp;· Active Recovery</span></div>
+    <div class="meal-row"><div class="meal-time">7:00 AM<br>Breakfast</div><div class="meal-content"><div class="meal-label">Protein Oatmeal</div><div class="meal-detail">½ cup oats + 1 scoop protein powder + cinnamon + banana sliced on top · Slightly fewer calories, lighter day</div></div></div>
+    <div class="meal-row"><div class="meal-time">10:30 AM<br>Snack</div><div class="meal-content"><div class="meal-label">Protein Bar or Chips</div><div class="meal-detail">Quest bar or Quest protein chips or Wilde chips · Track the macros</div></div></div>
+    <div class="meal-row"><div class="meal-time">1:00 PM<br>Lunch</div><div class="meal-content"><div class="meal-label">Mosque Meal Day / Home Dal</div><div class="meal-detail">If mosque: prioritize protein, half the rice · If home: Dal (lentil) curry + 1.5 cups rice + chicken on side</div></div></div>
+    <div class="meal-row"><div class="meal-time">7:00 PM<br>Dinner</div><div class="meal-content"><div class="meal-label">Tilapia + Roasted Veg</div><div class="meal-detail">6 oz tilapia baked with lemon, garlic, paprika · 1.5 cups small yellow potatoes roasted · Asparagus or Brussels sprouts · Drizzle olive oil</div></div></div>
+  </div>
+
+  <div class="meal-day">
+    <div class="meal-day-header">Thursday <span style="font-size:13px; font-family:'DM Sans', sans-serif; color:var(--muted); font-weight:400; letter-spacing:0">&nbsp;· Training Day (Upper B)</span></div>
+    <div class="meal-row"><div class="meal-time">7:00 AM<br>Breakfast</div><div class="meal-content"><div class="meal-label">Egg Whites + Toast</div><div class="meal-detail">6 egg whites scrambled · 2 slices Ezekiel or whole grain bread · ¼ avocado spread · Handful of spinach or greens</div></div></div>
+    <div class="meal-row"><div class="meal-time">10:30 AM<br>Snack</div><div class="meal-content"><div class="meal-label">Greek Yogurt + Berries</div><div class="meal-detail">1 cup 0% plain Greek yogurt · 1 cup mixed berries · Yakuta: this hits the sweet craving naturally</div></div></div>
+    <div class="meal-row"><div class="meal-time">1:00 PM<br>Lunch</div><div class="meal-content"><div class="meal-label">Beef Seekh Kebabs + Rice</div><div class="meal-detail">6 oz lean ground beef shaped into kebabs with onion, coriander, cumin, chili · 1.5 cups rice · Kachumber salad (onion, tomato, cucumber, lemon)</div></div></div>
+    <div class="meal-row"><div class="meal-time">Pre-WO</div><div class="meal-content"><div class="meal-label">Banana + Protein Shake</div><div class="meal-detail">Simple and fast. Eat 30–60 min before lifting.</div></div></div>
+    <div class="meal-row"><div class="meal-time">8:30 PM<br>Dinner</div><div class="meal-content"><div class="meal-label">Chicken + Beans</div><div class="meal-detail">6 oz grilled chicken · 1.5 cups beans or legumes (rajma / kidney beans works great) · Greens + drizzle olive oil</div></div></div>
+  </div>
+
+  <div class="meal-day">
+    <div class="meal-day-header">Friday <span style="font-size:13px; font-family:'DM Sans', sans-serif; color:var(--muted); font-weight:400; letter-spacing:0">&nbsp;· Training Day (Lower B)</span></div>
+    <div class="meal-row"><div class="meal-time">7:00 AM<br>Breakfast</div><div class="meal-content"><div class="meal-label">Protein Smoothie Bowl</div><div class="meal-detail">1 scoop protein + 1 frozen banana + ½ cup frozen berries + low-fat milk · Blend thick · Top with oats and 1 tbsp almond butter</div></div></div>
+    <div class="meal-row"><div class="meal-time">10:30 AM<br>Snack</div><div class="meal-content"><div class="meal-label">Cottage Cheese</div><div class="meal-detail">1 cup cottage cheese + 1 piece fruit · Fast, high-protein, no cooking</div></div></div>
+    <div class="meal-row"><div class="meal-time">1:00 PM<br>Lunch</div><div class="meal-content"><div class="meal-label">Surmai / Pomfret Curry</div><div class="meal-detail">6 oz surmai or pomfret (halal fish) cooked in light tomato-based curry · 1.5 cups rice · Spinach or green vegetable on side</div></div></div>
+    <div class="meal-row"><div class="meal-time">Pre-WO</div><div class="meal-content"><div class="meal-label">Simple Carb + Protein</div><div class="meal-detail">1 banana + 1 scoop protein shake · Or rice cakes + Greek yogurt</div></div></div>
+    <div class="meal-row"><div class="meal-time">8:30 PM<br>Dinner</div><div class="meal-content"><div class="meal-label">Ground Turkey Lettuce Cups</div><div class="meal-detail">6 oz 99% lean ground turkey cooked with soy sauce, garlic, ginger, sesame oil · Serve in romaine lettuce cups · Side of sliced cucumber</div></div></div>
+  </div>
+
+  <div class="meal-day">
+    <div class="meal-day-header">Saturday <span style="font-size:13px; font-family:'DM Sans', sans-serif; color:var(--muted); font-weight:400; letter-spacing:0">&nbsp;· Active Recovery + Meal Prep</span></div>
+    <div class="meal-row"><div class="meal-time">Morning</div><div class="meal-content"><div class="meal-label">Relaxed Breakfast</div><div class="meal-detail">Greek yogurt parfait or egg scramble · No rush. Weekend rhythm.</div></div></div>
+    <div class="meal-row"><div class="meal-time">Midday</div><div class="meal-content"><div class="meal-label">Mosque or Home Lunch</div><div class="meal-detail">Lean protein first, vegetables, controlled rice portion · Apply the mosque strategy from the Nutrition tab</div></div></div>
+    <div class="meal-row"><div class="meal-time">Afternoon</div><div class="meal-content"><div class="meal-label">MEAL PREP SESSION</div><div class="meal-detail">Cook 5–6 chicken breasts in different marinades · Batch boil rice or quinoa · Prep protein snacks for the week ahead · This Sunday prep = success all week</div></div></div>
+    <div class="meal-row"><div class="meal-time">Evening<br>Dinner</div><div class="meal-content"><div class="meal-label">Family / Social Dinner</div><div class="meal-detail">Eat mindfully. Fill half the plate with protein, quarter with veg, quarter with carbs. You don't need to track perfectly on weekends, just stay aware.</div></div></div>
+  </div>
+
+  <div class="meal-day">
+    <div class="meal-day-header">Sunday <span style="font-size:13px; font-family:'DM Sans', sans-serif; color:var(--muted); font-weight:400; letter-spacing:0">&nbsp;· Rest Day</span></div>
+    <div class="meal-row"><div class="meal-time">All Day</div><div class="meal-content"><div class="meal-label">Slight Calorie Reduction (Optional)</div><div class="meal-detail">On rest days you can drop carbs slightly (skip one carb portion) if you want to cycle calories. Keep protein identical. Or eat the same. Both work.</div></div></div>
+    <div class="meal-row"><div class="meal-time">All Day</div><div class="meal-content"><div class="meal-label">Protein Pudding Dessert (Yakuta)</div><div class="meal-detail">0% Greek yogurt + 1 scoop vanilla protein powder + frozen berries blended through. Refrigerate 20 min to set. Thick, creamy, and genuinely satisfying as a sweet treat.</div></div></div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════ SECTION: GROCERY ══════════════════════ -->
+<div id="section-grocery" class="section">
+
+  <div class="section-header">
+    <div class="section-label">05 / Grocery List</div>
+    <div class="section-title">WEEKLY SHOP</div>
+    <div class="section-desc">Everything you need for one week of the plan. Click items to check them off. Costco bulk options noted where applicable.</div>
+  </div>
+
+  <div class="grocery-grid">
+    <div class="card">
+      <div class="grocery-cat">🥩 Proteins</div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Chicken breast (2–3 lbs, skinless) · Costco Kirkland</span></div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Lean ground beef 93/7 (1–2 lbs)</span></div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Ground turkey 99% lean (1 lb)</span></div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Shrimp (1 lb, frozen bag)</span></div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Tilapia or surmai / pomfret (halal)</span></div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Egg whites (carton) + whole eggs (1 dozen)</span></div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>0% Greek yogurt (large tub)</span></div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>0% Cottage cheese (large tub)</span></div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Protein powder (Kirkland or preferred brand)</span></div>
+    </div>
+
+    <div class="card">
+      <div class="grocery-cat">🍚 Carbs</div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>White or brown rice (5 lb bag)</span></div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Sweet potatoes (3–4 medium)</span></div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Rolled oats (large canister)</span></div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Quinoa (1 bag)</span></div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Lentils / dal (dry or canned)</span></div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Kidney beans / rajma (canned)</span></div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Whole grain or Ezekiel bread (1 loaf)</span></div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Bananas (bunch)</span></div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Mixed berries (frozen bag, Costco)</span></div>
+    </div>
+
+    <div class="card">
+      <div class="grocery-cat">🥦 Vegetables</div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Spinach (large bag)</span></div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Broccoli (fresh or frozen)</span></div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Asparagus (bunch)</span></div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Cauliflower</span></div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Brussels sprouts</span></div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Romaine lettuce / mixed greens bag</span></div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Cucumbers (3–4)</span></div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Tomatoes (4–5)</span></div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Onions (bag)</span></div>
+    </div>
+
+    <div class="card">
+      <div class="grocery-cat">🧈 Fats + Condiments</div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Almond butter (1 jar)</span></div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Avocados (3–4)</span></div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Olive oil (bottle)</span></div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Coconut oil (small jar)</span></div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Mixed nuts (small bag · portion controlled)</span></div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Soy sauce (low sodium)</span></div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Hot sauce / sriracha</span></div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Lemons (bag)</span></div>
+    </div>
+
+    <div class="card">
+      <div class="grocery-cat">🌶️ Spices (Refill as Needed)</div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Turmeric</span></div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Cumin (whole + ground)</span></div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Coriander (ground)</span></div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Garam masala</span></div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Paprika / chili powder</span></div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Cinnamon</span></div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Garlic (fresh + powder)</span></div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Fresh ginger</span></div>
+    </div>
+
+    <div class="card">
+      <div class="grocery-cat">🍫 Snacks + Extras</div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Quest protein bars (box)</span></div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Quest or Wilde protein chips</span></div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Rice cakes (plain)</span></div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Sparkling water (if needed)</span></div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Ziplock bags (for marination batches)</span></div>
+      <div class="grocery-item"><div class="grocery-check" onclick="toggleCheck(this)"></div><span>Digital food scale (if not already owned)</span></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════ SECTION: TRACKING ══════════════════════ -->
+<div id="section-tracking" class="section">
+
+  <div class="section-header">
+    <div class="section-label">06 / Tracking</div>
+    <div class="section-title">DAILY + WEEKLY CHECKLIST</div>
+    <div class="section-desc">Use this to stay accountable. The daily non-negotiables are what build the 12 weeks, one day at a time.</div>
+  </div>
+
+  <!-- PROGRESS METHODS -->
+  <h3>HOW TO MEASURE PROGRESS</h3>
+  <div class="progress-grid">
+    <div class="progress-item">
+      <div class="progress-icon">⚖️</div>
+      <div class="progress-label">Body Weight</div>
+      <div class="progress-freq">Daily, morning average</div>
+    </div>
+    <div class="progress-item">
+      <div class="progress-icon">📏</div>
+      <div class="progress-label">Measurements</div>
+      <div class="progress-freq">Every 2 weeks</div>
+    </div>
+    <div class="progress-item">
+      <div class="progress-icon">📸</div>
+      <div class="progress-label">Progress Photos</div>
+      <div class="progress-freq">Every 2 weeks</div>
+    </div>
+    <div class="progress-item">
+      <div class="progress-icon">💪</div>
+      <div class="progress-label">Strength Logs</div>
+      <div class="progress-freq">Every session</div>
+    </div>
+    <div class="progress-item">
+      <div class="progress-icon">👕</div>
+      <div class="progress-label">How Clothes Fit</div>
+      <div class="progress-freq">Weekly check-in</div>
+    </div>
+    <div class="progress-item">
+      <div class="progress-icon">⚡</div>
+      <div class="progress-label">Energy Levels</div>
+      <div class="progress-freq">Daily (1–10 rating)</div>
+    </div>
+  </div>
+
+  <div class="alert" style="margin: 24px 0;">
+    <span class="alert-icon">📊</span>
+    <span>Weigh every morning after waking, before eating or drinking. Take the weekly average (add 7 days and divide by 7). One bad scale reading means nothing. The trend over 2 weeks is your data.</span>
+  </div>
+
+  <!-- DAILY CHECKLIST -->
+  <div class="check-section">
+    <div class="check-title">DAILY NON-NEGOTIABLES</div>
+    <div class="check-item" onclick="toggleCheckItem(this)">
+      <div class="check-box"></div>
+      <div class="check-text">Hit protein target<div class="check-sub">Aziz: 192g minimum · Yakuta: 163g minimum — every single day, no excuses</div></div>
+    </div>
+    <div class="check-item" onclick="toggleCheckItem(this)">
+      <div class="check-box"></div>
+      <div class="check-text">Drink 3–4 liters of water<div class="check-sub">Track with a marked bottle. Start with a full glass before anything else in the morning.</div></div>
+    </div>
+    <div class="check-item" onclick="toggleCheckItem(this)">
+      <div class="check-box"></div>
+      <div class="check-text">Log your food<div class="check-sub">Use MyFitnessPal or Cronometer. Weigh food on a digital scale for accuracy.</div></div>
+    </div>
+    <div class="check-item" onclick="toggleCheckItem(this)">
+      <div class="check-box"></div>
+      <div class="check-text">Complete your workout (or minimum dose)<div class="check-sub">4 days training, 1 active recovery, 2 rest. Never skip two days in a row.</div></div>
+    </div>
+    <div class="check-item" onclick="toggleCheckItem(this)">
+      <div class="check-box"></div>
+      <div class="check-text">8,000+ steps<div class="check-sub">Both of you drive a lot. Steps outside the gym matter. Aim for 8–10K daily.</div></div>
+    </div>
+    <div class="check-item" onclick="toggleCheckItem(this)">
+      <div class="check-box"></div>
+      <div class="check-text">Sleep 7–8 hours<div class="check-sub">Fat loss and muscle building both depend on sleep. Non-negotiable for hormones, recovery, and energy.</div></div>
+    </div>
+  </div>
+
+  <!-- WEEKLY CHECKLIST -->
+  <div class="check-section">
+    <div class="check-title">WEEKLY CHECKLIST</div>
+    <div class="check-item" onclick="toggleCheckItem(this)">
+      <div class="check-box"></div>
+      <div class="check-text">Weigh yourself every morning and calculate weekly average<div class="check-sub">Compare week-to-week average, not day-to-day numbers.</div></div>
+    </div>
+    <div class="check-item" onclick="toggleCheckItem(this)">
+      <div class="check-box"></div>
+      <div class="check-text">Log weights used in each workout on the whiteboard<div class="check-sub">Write it down. If you did 20 lbs this week, try 22 lbs next week.</div></div>
+    </div>
+    <div class="check-item" onclick="toggleCheckItem(this)">
+      <div class="check-box"></div>
+      <div class="check-text">Grocery shop and meal prep on Sunday<div class="check-sub">Batch cook proteins, prep portions. Sunday prep = effortless weekdays.</div></div>
+    </div>
+    <div class="check-item" onclick="toggleCheckItem(this)">
+      <div class="check-box"></div>
+      <div class="check-text">Take progress photos every 2 weeks<div class="check-sub">Same lighting, same time of day, same spot. Front and side. You'll be shocked how much changes.</div></div>
+    </div>
+    <div class="check-item" onclick="toggleCheckItem(this)">
+      <div class="check-box"></div>
+      <div class="check-text">Measure waist, chest, hips, arms, and thighs every 2 weeks<div class="check-sub">Especially important for Aziz (chest/waist) and Yakuta (arms/thighs). This shows fat loss when the scale doesn't.</div></div>
+    </div>
+    <div class="check-item" onclick="toggleCheckItem(this)">
+      <div class="check-box"></div>
+      <div class="check-text">Check-in conversation with each other<div class="check-sub">What went well? What was hard? Adjust next week accordingly. You're a team.</div></div>
+    </div>
+  </div>
+
+  <!-- BODY IMAGE NOTE -->
+  <div class="card">
+    <div class="card-title"><span class="dot"></span>A Note on Body Image</div>
+    <p>Aziz: what you're dealing with is real, and training can't solve the underlying tissue. What it absolutely can do is shift the visual balance of your upper body. A wider back, fuller shoulders, and a more defined upper chest change how everything looks under a shirt and without one. Trust the process. It takes weeks, not days, to see it, but the change is coming. Focus on performance gains as your measuring stick, not just the mirror.</p>
+    <p>Yakuta: toning comes from two things happening at the same time, losing fat and building muscle in those specific areas. The arm and leg work in this plan directly targets that. Chronic pain doesn't mean you can't progress. It means we train smarter. Every modification in this plan was chosen specifically for you.</p>
+    <div class="alert green" style="margin-top:16px;">
+      <span class="alert-icon">💚</span>
+      <span>You're doing this together. That's your biggest advantage. Accountability, motivation, and someone to compete with (healthily) every single week.</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════ SECTION: RULES ════════════════════════ -->
+<div id="section-rules" class="section">
+
+  <div class="section-header">
+    <div class="section-label">07 / Rules</div>
+    <div class="section-title">RULES FOR SUCCESS</div>
+    <div class="section-desc">Not motivational fluff. Actual operating rules for the next 12 weeks.</div>
+  </div>
+
+  <div class="rules-grid">
+    <div class="rule-card">
+      <div class="rule-num">01</div>
+      <div class="rule-title">Protein First, Always</div>
+      <div class="rule-text">Every single meal starts with protein. If you hit your calorie target but miss protein, the day doesn't count. This is the one macro you cannot negotiate with.</div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-num">02</div>
+      <div class="rule-title">Track for 2 Weeks Before Adjusting</div>
+      <div class="rule-text">Don't change your macros after 3 days of bad scale readings. Two full weeks of consistent tracking gives you actual data. One week is noise.</div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-num">03</div>
+      <div class="rule-title">The Whiteboard Is Sacred</div>
+      <div class="rule-text">Write tomorrow's workout on the board tonight. Walk in knowing exactly what you're doing. The session starts better, ends faster, and delivers more results.</div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-num">04</div>
+      <div class="rule-title">Never Skip Two Days in a Row</div>
+      <div class="rule-text">Miss one day, fine. Life happens. Never miss two. Skipping two consecutive days is how habits break. One day off is rest. Two days off is drift.</div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-num">05</div>
+      <div class="rule-title">Eat Before You Go Out</div>
+      <div class="rule-text">Mosque meals, restaurants, family dinners: eat a protein snack before attending. Going somewhere hungry means you'll overeat. This is the EPG going-out hack, and it works.</div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-num">06</div>
+      <div class="rule-title">Sunday is System Day</div>
+      <div class="rule-text">Grocery shopping and meal prep happens on Sunday. If proteins are marinated and portions are ready in the fridge, the entire week becomes easy. Skip this and the week becomes hard.</div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-num">07</div>
+      <div class="rule-title">Heavier Every 2 Weeks</div>
+      <div class="rule-text">If the last two reps felt comfortable, add 2–5 lbs next session. Progressive overload is the engine of this plan. Lifting the same weight for 12 weeks builds nothing new.</div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-num">08</div>
+      <div class="rule-title">Sleep Is Part of the Plan</div>
+      <div class="rule-text">7–8 hours minimum. Fat loss hormones, muscle recovery, energy, and cravings are all regulated during sleep. Cutting sleep to train more is the wrong trade.</div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-num">09</div>
+      <div class="rule-title">Pain Is Information, Not a Badge</div>
+      <div class="rule-text">Yakuta: if something hurts (not burns, hurts) during a movement, stop and modify. There are always alternatives in this plan. Training through actual pain helps nobody.</div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-num">10</div>
+      <div class="rule-title">Measure Everything That Matters</div>
+      <div class="rule-text">Scale weight, measurements, photos, strength numbers, energy, and how clothes fit. If the scale stalls for 2 weeks but your measurements are down and shirts fit better: you're winning. Don't just watch one number.</div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top: 32px; background: linear-gradient(135deg, #1a0904, #0d0409); border-color: rgba(244,82,26,0.25);">
+    <div style="text-align: center; padding: 20px 0;">
+      <div style="font-family: 'Bebas Neue', sans-serif; font-size: 48px; color: var(--accent); letter-spacing: 3px; line-height: 1;">GRIND2SHINE</div>
+      <div style="font-size: 14px; color: var(--muted); margin-top: 8px;">12 weeks from now, you'll wish you started today. You started today.</div>
+      <div style="margin-top: 20px; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 2px; color: rgba(244,82,26,0.6); text-transform: uppercase;">Aziz + Yakuta · April 2026 → July 2026</div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div><strong>GRIND2SHINE FAMILY EDITION</strong></div>
+  <div style="margin-top: 8px; color: rgba(255,255,255,0.2)">Built from EPG protocols · BWS Upper-Lower framework · Halal nutrition guidelines · April 2026</div>
+  <div style="margin-top: 6px; font-size: 12px;">Not medical advice. If gynecomastia or chronic pain require attention, consult a physician. Train smart.</div>
+</div>
+
+<script>
+  function showSection(id) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('section-' + id).classList.add('active');
+    event.target.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function toggleWorkout(header) {
+    const body = header.nextElementSibling;
+    const chevron = header.querySelector('.workout-chevron');
+    const isOpen = body.classList.contains('open');
+    body.classList.toggle('open', !isOpen);
+    header.classList.toggle('open', !isOpen);
+    chevron.classList.toggle('open', !isOpen);
+  }
+
+  function toggleCheck(el) {
+    el.classList.toggle('checked');
+  }
+
+  function toggleCheckItem(item) {
+    const box = item.querySelector('.check-box');
+    box.classList.toggle('checked');
+    item.style.opacity = box.classList.contains('checked') ? '0.5' : '1';
+  }
+
+  // Initialize first workout as open
+  document.querySelector('.workout-body').classList.add('open');
+</script>
+</body>
+</html>
